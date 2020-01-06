@@ -12,10 +12,10 @@ public class Trie {
         }
 
         TrieNode p = _root;
-        for (int i = 0; i < seq.length; i++) {
-            int index = seq[i] - 'a';
+        for (char c : seq) {
+            int index = c - 'a';
             if (p.children[index] == null) {
-                p.children[index] = new TrieNode(seq[i]);
+                p.children[index] = new TrieNode(c);
             }
             p = p.children[index];
         }
@@ -35,8 +35,8 @@ public class Trie {
         }
 
         TrieNode p = _root;
-        for (int i = 0; i < pattern.length; i++) {
-            int index = pattern[i] - 'a';
+        for (char c : pattern) {
+            int index = c - 'a';
             if (p.children[index] == null) {
                 return false;
             }
