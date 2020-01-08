@@ -1,6 +1,7 @@
 package main;
 
 import com.ccjpp.Ac;
+import com.ccjpp.Backtracking;
 import com.ccjpp.DivideConquer;
 import com.ccjpp.Trie;
 
@@ -11,9 +12,11 @@ public class Main {
         System.out.println("Hello World!");
         //testTrie();
         //testAc();
-        testDivideConquer();
+        //testDivideConquer();
+        //testBacktracking();
     }
 
+    // Trie树
     public static void testTrie() {
         Trie t = new Trie(new String[]{"hello", "world", "java", "case", "well"});
         t.multiInset();
@@ -27,6 +30,7 @@ public class Main {
         }
     }
 
+    // Ac自动机
     public static void testAc() {
         Ac ac = new Ac(new String[]{"hello", "world", "java", "case", "well"});
         ac.buildAc();
@@ -34,6 +38,7 @@ public class Main {
         System.out.println(result);
     }
 
+    // 分治
     public static void testDivideConquer() {
         DivideConquer dc = new DivideConquer(new int[]{2, 1, 3, 5, 4, 2, 7, 8, 6, 8});
         int num = dc.process().getNum();
@@ -43,5 +48,11 @@ public class Main {
         for (ArrayList<Integer> pair : pairs) {
             System.out.println(pair);
         }
+    }
+
+    // 回溯
+    public static void testBacktracking() {
+        Backtracking b = new Backtracking(8, 8);
+        b.cal8queue(0);
     }
 }
