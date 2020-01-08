@@ -1,6 +1,7 @@
 package main;
 
 import com.ccjpp.Ac;
+import com.ccjpp.DivideConquer;
 import com.ccjpp.Trie;
 
 import java.util.ArrayList;
@@ -9,7 +10,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         //testTrie();
-        testAc();
+        //testAc();
+        testDivideConquer();
     }
 
     public static void testTrie() {
@@ -30,5 +32,16 @@ public class Main {
         ac.buildAc();
         ArrayList<String> result = ac.search("helloworldjava");
         System.out.println(result);
+    }
+
+    public static void testDivideConquer() {
+        DivideConquer dc = new DivideConquer(new int[]{2, 1, 3, 5, 4, 2, 7, 8, 6, 8});
+        int num = dc.process().getNum();
+        System.out.printf("total num = %d\n", num);
+        System.out.println("pairs is :");
+        ArrayList<ArrayList<Integer>> pairs = dc.getPairs();
+        for (ArrayList<Integer> pair : pairs) {
+            System.out.println(pair);
+        }
     }
 }
