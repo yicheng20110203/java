@@ -12,6 +12,7 @@ public class Main {
         //testDivideConquer();
         //testBacktracking();
         testBacktrackingRegexp();
+        testDynamicProgramingV1();
     }
 
     // Trie树
@@ -64,5 +65,10 @@ public class Main {
         } else {
             System.out.printf("regexp = '%s' matches '%s' false\n", regex.getRegex(), regex.getSource());
         }
+    }
+
+    public static void testDynamicProgramingV1() {
+        DynamicPrograming dp = new DynamicPrograming(new int[]{2, 2, 4, 6, 3}, 5, 16);
+        System.out.printf("max = %d",dp.getStates());
     }
 }
