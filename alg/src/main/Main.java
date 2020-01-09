@@ -1,9 +1,6 @@
 package main;
 
-import com.ccjpp.Ac;
-import com.ccjpp.Backtracking;
-import com.ccjpp.DivideConquer;
-import com.ccjpp.Trie;
+import com.ccjpp.*;
 
 import java.util.ArrayList;
 
@@ -14,6 +11,7 @@ public class Main {
         //testAc();
         //testDivideConquer();
         //testBacktracking();
+        testBacktrackingRegexp();
     }
 
     // Trie树
@@ -54,5 +52,17 @@ public class Main {
     public static void testBacktracking() {
         Backtracking b = new Backtracking(8, 8);
         b.cal8queue(0);
+    }
+
+    // 回溯 + 正则
+    public static void testBacktrackingRegexp() {
+        BacktrackingRegex regex = new BacktrackingRegex("hello world java", "*llo?world.jav*");
+        regex.match();
+        boolean isMatch = regex.getMatch();
+        if (isMatch) {
+            System.out.printf("regexp = '%s' matches '%s' true\n", regex.getRegex(), regex.getSource());
+        } else {
+            System.out.printf("regexp = '%s' matches '%s' false\n", regex.getRegex(), regex.getSource());
+        }
     }
 }
