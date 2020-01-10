@@ -27,6 +27,7 @@ public class Ac {
 
     /**
      * 构建trie树
+     *
      * @param s String
      */
     public void insertTrie(String s) {
@@ -50,10 +51,10 @@ public class Ac {
     /**
      * 构造Ac自动机fail指针
      */
-    public void buildAc () {
-        this.root.fail = null;
+    public void buildAc() {
+        root.fail = null;
         Queue<AcNode> queue = new LinkedList<>();
-        queue.add(this.root);
+        queue.add(root);
 
         while (!queue.isEmpty()) {
             AcNode p = queue.remove();
@@ -72,16 +73,15 @@ public class Ac {
                 while (q != null) {
                     AcNode qc = q.children[pc.data - 'a'];
                     if (qc != null) {
-                        q.fail = qc;
+                        pc.fail = qc;
                         break;
                     }
-
                     q = q.fail;
                 }
+
                 if (q == null) {
                     pc.fail = root;
                 }
-
                 queue.add(pc);
             }
         }
@@ -89,6 +89,7 @@ public class Ac {
 
     /**
      * AC自动机多字符串匹配搜索
+     *
      * @param s String
      * @return ArrayList<String>
      */

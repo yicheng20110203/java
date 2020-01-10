@@ -13,7 +13,8 @@ public class Main {
         //testBacktracking();
         //testBacktrackingRegexp();
         //testDynamicProgramingV1();
-        testDynamicProgramingV2();
+        //testDynamicProgramingV2();
+        testGetMaxIncSubSeq();
     }
 
     // Trie树
@@ -82,5 +83,10 @@ public class Main {
         }, 4, 4);
         System.out.printf("min dist = %d\n", v2.minDist());
         System.out.printf("min num = %d\n", v2.minMoneyNum(new int[]{1,5, 3}, 9));
+    }
+
+    public static void testGetMaxIncSubSeq() {
+        DynamicProgramingMaxIncSubSeq dp = new DynamicProgramingMaxIncSubSeq();
+        System.out.println(dp.getMaxIncSeqNum(new int[]{2,9,3,6,5,1,7}));
     }
 }

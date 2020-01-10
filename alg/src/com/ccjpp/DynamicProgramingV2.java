@@ -1,7 +1,5 @@
 package com.ccjpp;
 
-import java.util.Arrays;
-
 /**
  * 动态规划
  * w[n][w] 从w[0][0]走到w[n-1][w-1]需要的最小步骤
