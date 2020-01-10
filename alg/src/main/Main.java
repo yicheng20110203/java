@@ -11,8 +11,9 @@ public class Main {
         //testAc();
         //testDivideConquer();
         //testBacktracking();
-        testBacktrackingRegexp();
-        testDynamicProgramingV1();
+        //testBacktrackingRegexp();
+        //testDynamicProgramingV1();
+        testDynamicProgramingV2();
     }
 
     // Trie树
@@ -69,6 +70,17 @@ public class Main {
 
     public static void testDynamicProgramingV1() {
         DynamicPrograming dp = new DynamicPrograming(new int[]{2, 2, 4, 6, 3}, 5, 16);
-        System.out.printf("max = %d",dp.getStates());
+        System.out.printf("max = %d", dp.getStateV2());
+    }
+
+    public static void testDynamicProgramingV2() {
+        DynamicProgramingV2 v2 = new DynamicProgramingV2(new int[][]{
+                {1, 3, 5, 9},
+                {2, 1, 3, 4},
+                {5, 2, 6, 7},
+                {16, 8, 4, 3}
+        }, 4, 4);
+        System.out.printf("min dist = %d\n", v2.minDist());
+        System.out.printf("min num = %d\n", v2.minMoneyNum(new int[]{1,5, 3}, 9));
     }
 }
